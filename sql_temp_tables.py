@@ -44,21 +44,21 @@ list = [
   ["Wilmington Ballardva",10],
 ]
 
-temp_table = 1
-
 for entry in list:
-  print(f"--{entry}")
+  warehouse = entry[0]
+  temp_table = warehouse.replace(" ","")
+  (f"--{entry}")
   print(f"IF OBJECT_ID('tempdb..#{temp_table}') IS NOT NULL BEGIN DROP TABLE #{temp_table} END")
-  print(f"select top {entry[1]}*")
+  print(f"SELECT TOP {entry[1]}*")
   print(f"INTO #{temp_table}")
   print("FROM #ALLJOBS")
-  print(f"WHERE office in('{entry[0]}')")
+  print(f"WHERE office in('{warehouse}')")
   print("")
   print("")
-  temp_table += 1
 
 
   # USEFUL RESOURCES
   # iterate through array: https://snakify.org/en/lessons/two_dimensional_lists_arrays/
   # string interpolation: https://realpython.com/python-string-formatting/
+  # white space handling: journaldev.com/23763/python-remove-spaces-from-string
   
