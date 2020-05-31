@@ -44,9 +44,14 @@ list = [
   ["Wilmington Ballardva",10],
 ]
 
+# Python3 code to remove whitespace 
+def remove(string): 
+    return "".join(string.split()) 
+
 for entry in list:
   warehouse = entry[0]
   temp_table = warehouse.replace(" ","")
+  temp_table = remove(warehouse)
   (f"--{entry}")
   print(f"IF OBJECT_ID('tempdb..#{temp_table}') IS NOT NULL BEGIN DROP TABLE #{temp_table} END")
   print(f"SELECT TOP {entry[1]}*")
