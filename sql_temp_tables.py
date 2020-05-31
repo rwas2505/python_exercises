@@ -66,4 +66,4 @@ for entry in list:
   # iterate through array: https://snakify.org/en/lessons/two_dimensional_lists_arrays/
   # string interpolation: https://realpython.com/python-string-formatting/
   # white space handling: journaldev.com/23763/python-remove-spaces-from-string
-  
+  # https://www.geeksforgeeks.org/python-remove-spaces-from-a-string/
